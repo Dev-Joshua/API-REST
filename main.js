@@ -96,7 +96,7 @@ async function deleteFavoriteDog(id) {
   if (response.status !== 200) {
     spanError.innerHTML = "Error: " + response.status + " " + data.message;
   } else {
-    console.log("Eliminado");
+    console.log("Eliminado de la lista");
     loadFavoriteDogs();
   }
 }
