@@ -42,8 +42,15 @@ async function loadFavoriteDogs() {
   if (response.status !== 200) {
     spanError.innerText = `Hubo un error: ${response.status} ${data.message}`;
   } else {
+    const section = document.getElementById("adoptedDogs");
+    section.innerHTML = "";
+
+    const h2 = document.createElement("h2");
+    const h2Text = document.createTextNode("Perritos Adoptados");
+    h2.appendChild(h2Text);
+    section.appendChild(h2);
+
     data.forEach((dog) => {
-      const section = document.getElementById("adoptedDogs");
       const article = document.createElement("article");
       const img = document.createElement("img");
       const btn = document.createElement("button");
@@ -82,9 +89,13 @@ async function saveFavoriteDog(id) {
 
   if (response.status == 401) {
     spanError.innerHTML = `Hubo un error:   ${response.status} ${data.message}`;
+  } else {
+    console.log("Perrito añadido a la lista de adoptados");
+    loadFavoriteDogs();
   }
 }
 
+// eliminar un elemento dog de favoritos(api_url_delete)
 async function deleteFavoriteDog(id) {
   const response = await fetch(API_URL_DELETE(id), {
     method: "DELETE",
