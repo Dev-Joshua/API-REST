@@ -34,7 +34,13 @@ async function loadRandomDogs() {
 
 // fetch por defecto viene de tipo GET
 async function loadFavoriteDogs() {
-  const response = await fetch(`${API_URL}favourites?api_key=${API_KEY}`);
+  const response = await fetch(`${API_URL}favourites?`, {
+    method: "GET",
+    headers: {
+      "x-api-key": API_KEY,
+      "Content-Type": "application/json",
+    },
+  });
   const data = await response.json();
   console.log("Favoritos");
   console.log(data);
@@ -87,7 +93,7 @@ async function saveFavoriteDog(id) {
   console.log("Save");
   console.log(response);
 
-  if (response.status == 401) {
+  if (response.status !== 200) {
     spanError.innerHTML = `Hubo un error:   ${response.status} ${data.message}`;
   } else {
     console.log("Perrito añadido a la lista de adoptados");
@@ -100,7 +106,7 @@ async function deleteFavoriteDog(id) {
   const response = await fetch(API_URL_DELETE(id), {
     method: "DELETE",
     headers: {
-      "X-API-KEY": API_KEY,
+      "x-api-key": API_KEY,
     },
   });
   const data = await response.json();
@@ -109,6 +115,37 @@ async function deleteFavoriteDog(id) {
   } else {
     console.log("Eliminado de la lista");
     loadFavoriteDogs();
+  }
+}
+
+async function uploadDogPhoto() {
+  const form = document.getElementById("form");
+  const formData = new FormData(form);
+
+  //Quiero obtemer la llave file
+  console.log(formData.get("file"));
+
+  const response = await fetch(`${API_URL}images/upload`, {
+    method: "POST",
+    headers: {
+      "x-api-key": API_KEY,
+      // "Content-Type": "multipart/form-data",
+    },
+    body: formData,
+  });
+
+  const data = await response.json();
+
+  console.log("Save");
+  console.log(response);
+
+  if (response.status !== 201) {
+    spanError.innerHTML = `Hubo un error:   ${response.status} ${data.message}`;
+  } else {
+    console.log("Foto cargada con exito");
+    console.log({ data });
+    console.log(data.url);
+    saveFavoriteDog(data.id);
   }
 }
 
