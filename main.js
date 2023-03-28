@@ -1,10 +1,9 @@
 // Inserto axios en el proyecto solamente para una funcion(saveFavoriteDog)
-const api = axios.create({
-  baseURL: "https://api.thedogapi.com/v1/",
-});
-api.defaults.headers.common["X-API-KEY"] =
-  "live_GFa3HlPNBLTz3Eww5PoLRNmP7C7vpWwKSnAdQaQCGaZZfYsSqkp1keGp9eSsuRIU";
-
+// const api = axios.create({
+//   baseURL: "https://api.thedogapi.com/v1/",
+// });
+// api.defaults.headers.common["X-API-KEY"] =
+//   "live_GFa3HlPNBLTz3Eww5PoLRNmP7C7vpWwKSnAdQaQCGaZZfYsSqkp1keGp9eSsuRIU";
 const API_URL = "https://api.thedogapi.com/v1/";
 const RANDOM = "images/search";
 const LIMIT = "?limit=12";
@@ -43,9 +42,10 @@ async function loadRandomDogs() {
     data.forEach((dog) => {
       sectionDiv.innerHTML += `
       <article>
-        <a href="" class="block">
+        <a class="block">
           <div class="span">
-            <strong>Adóptame</strong>
+            <button id="btn" onclick="
+              saveFavoriteDog('${dog.id}')">Adóptame</button>
           </div>
           <img src="${dog.url}"  alt="doggie pic" />
         </a>
@@ -100,7 +100,7 @@ async function loadFavoriteDogs() {
 
 // funcion para guardar un gato en favoritos con el metodo 'POST'
 async function saveFavoriteDog(id) {
-  /*const response = await fetch(`${API_URL}favourites?limit=3`, {
+  const response = await fetch(`${API_URL}favourites`, {
     method: "POST",
     headers: {
       "x-api-key": API_KEY,
@@ -111,20 +111,20 @@ async function saveFavoriteDog(id) {
     }),
   });
 
-  const data = await response.text();*/
-  const { data, status } = await api.post("/favourites", {
-    image_id: id,
-  });
+  const data = await response.text();
+  // const { data, status } = await api.post("/favourites", {
+  //   image_id: id,
+  // });
 
-  console.log("Save");
+  // console.log("Save");
 
-  if (status !== 200) {
-    spanError.innerHTML = `Hubo un error:   ${status} ${data.message}`;
-  } else {
-    console.log("Perrito añadido a la lista de adoptados");
-    loadFavoriteDogs();
-  }
-  /*
+  // if (status !== 200) {
+  //   spanError.innerHTML = `Hubo un error:   ${status} ${data.message}`;
+  // } else {
+  //   console.log("Perrito añadido a la lista de adoptados");
+  //   loadFavoriteDogs();
+  // }
+
   console.log("Save");
   console.log(response);
 
@@ -134,7 +134,6 @@ async function saveFavoriteDog(id) {
     console.log("Perrito añadido a la lista de adoptados");
     loadFavoriteDogs();
   }
-  */
 }
 
 // eliminar un elemento dog de favoritos(api_url_delete)
