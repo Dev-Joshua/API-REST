@@ -45,7 +45,7 @@ async function loadRandomDogs() {
         <a class="block">
           <div class="span">
             <button id="btn" onclick="
-              saveFavoriteDog('${dog.id}')">Adóptame</button>
+              saveFavoriteDog('${dog.id}')">Adóptame ❤</button>
           </div>
           <img src="${dog.url}"  alt="doggie pic" />
         </a>
