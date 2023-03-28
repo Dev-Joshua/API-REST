@@ -7,7 +7,7 @@ api.defaults.headers.common["X-API-KEY"] =
 
 const API_URL = "https://api.thedogapi.com/v1/";
 const RANDOM = "images/search";
-const LIMIT = "?limit=2";
+const LIMIT = "?limit=12";
 const API_KEY =
   "live_GFa3HlPNBLTz3Eww5PoLRNmP7C7vpWwKSnAdQaQCGaZZfYsSqkp1keGp9eSsuRIU";
 
@@ -26,16 +26,32 @@ async function loadRandomDogs() {
   if (response.status !== 200) {
     spanError.innerText = `Hubo un error: ${response.status}`;
   } else {
-    const img1 = document.getElementById("img1");
-    const img2 = document.getElementById("img2");
-    const btn1 = document.getElementById("btn1");
-    const btn2 = document.getElementById("btn2");
+    // const img1 = document.getElementById("img1");
+    // const img2 = document.getElementById("img2");
+    // const btn1 = document.getElementById("btn1");
+    // const btn2 = document.getElementById("btn2");
 
-    img1.src = data[0].url;
-    img2.src = data[1].url;
+    // img1.src = data[0].url;
+    // img2.src = data[1].url;
 
-    btn1.onclick = () => saveFavoriteDog(data[0].id);
-    btn2.onclick = () => saveFavoriteDog(data[1].id);
+    // btn1.onclick = () => saveFavoriteDog(data[0].id);
+    // btn2.onclick = () => saveFavoriteDog(data[1].id);
+
+    const sectionDiv = document.getElementById("divContainer");
+    sectionDiv.innerHTML = "";
+
+    data.forEach((dog) => {
+      sectionDiv.innerHTML += `
+      <article>
+        <a href="" class="block">
+          <div class="span">
+            <strong>Adóptame</strong>
+          </div>
+          <img src="${dog.url}"  alt="doggie pic" />
+        </a>
+      </article>
+      `;
+    });
   }
 }
 
