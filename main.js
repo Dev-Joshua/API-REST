@@ -71,23 +71,25 @@ async function loadFavoriteDogs() {
   if (response.status !== 200) {
     spanError.innerText = `Hubo un error: ${response.status} ${data.message}`;
   } else {
-    const section = document.getElementById("adoptedDogs");
+    const section = document.getElementById("containerDogs");
     section.innerHTML = "";
 
-    const h2 = document.createElement("h2");
-    const h2Text = document.createTextNode("Perritos Adoptados");
-    h2.appendChild(h2Text);
-    section.appendChild(h2);
+    // const h2 = document.createElement("h2");
+    // const h2Text = document.createTextNode("Perritos Adoptados");
+    // h2.appendChild(h2Text);
+    // section.appendChild(h2);
 
     data.forEach((dog) => {
       const article = document.createElement("article");
       const img = document.createElement("img");
       const btn = document.createElement("button");
-      const btnText = document.createTextNode("Sacar perrito de adoptados");
+      const span = document.createElement("span");
+      const btnText = document.createTextNode("Quitar de la lista");
 
       img.src = dog.image.url;
       img.width = 150;
-      btn.appendChild(btnText);
+      span.appendChild(btnText);
+      btn.appendChild(span);
 
       btn.onclick = () => deleteFavoriteDog(dog.id);
 
