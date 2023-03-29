@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+}
+
+.navbar img {
+  width: 65px;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  margin-right: 200px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.portfolio a img {
+  width: 15px;
+  color: gray;
+}
+
+.portfolio a {
+  text-decoration: none;
+  color: black;
+}
+
+#banner img {
+  object-fit: cover;
+  height: 90vh;
+  width: 100%;
+  opacity: 0.6;
+}
+
+.container-text {
+  position: absolute;
+  top: 300px;
+  width: 40%;
+  right: 0px;
+  z-index: 1;
+}
+.container-text h1 {
+  width: 90%;
+  font-weight: 700;
+  color: #000;
+}
+.container-text p {
+  color: #000;
+  font-weight: 500;
+  width: 60%;
+  text-align: justify;
+}
+.container-text .btn {
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: #000;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  background: transparent;
+  box-shadow: 3px 3px #000;
+  cursor: pointer;
+  margin: 35px 0;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.container-text .btn:hover {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
+#dogsForAdoption {
+  display: grid;
+  justify-items: center;
+}
+#dogsForAdoption h2 {
+  background-color: #000;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  width: 35vw;
+  position: relative;
+  top: 20px;
+  color: #fff;
+}
+
+#divContainer {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: 100%;
+  justify-items: center;
+  margin-top: 40px;
+}
+#divContainer article {
+  margin-top: 20px;
+  width: 90%;
+}
+
+.block {
+  text-decoration: none;
+}
+.block img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+.span {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  top: 340px;
+}
+.span button {
+  --color: #000;
+  padding: 0.4em 1.2em;
+  background-color: #fff;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: bold;
+  font-size: 14px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+.span button::before,
+.span button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+.span button::before {
+  top: -1em;
+  left: -1em;
+}
+.span button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+.span button:hover::before,
+.span button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+.span button:hover {
+  color: #fff;
+  font-weight: bold;
+  border-color: #000;
+}
+.span button:active {
+  filter: brightness(0.8);
+}
+
+.box {
+  margin-top: 50px;
+  display: inline-block;
+  border-radius: 30px;
+  background-color: #000;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.box span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.box span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+.box:hover span {
+  padding-right: 15px;
+}
+
+.box:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.banner-md {
+  margin-top: 100px;
+  display: flex;
+}
+.imageContainer {
+  position: relative;
+  top: 60px;
+  width: 50%;
+  z-index: 1;
+}
+.banner-md img {
+  margin-left: 30px;
+  object-fit: cover;
+  height: 80vh;
+  width: 100%;
+}
+.containerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: gainsboro;
+  width: 50%;
+  gap: 20px;
+  height: 100vh;
+  margin-right: 30px;
+}
+.containerText h2 {
+  font-size: 30px;
+  font-weight: bold;
+  width: 75%;
+}
+.containerText .lorem {
+  width: 70%;
+  font-size: 14px;
+  text-align: justify;
+  color: gray;
+}
+
+.containerText button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+.containerText button {
+  --primary-color: #111;
+  --hovered-color: #d47023;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+.containerText button p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+.containerText button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+.containerText button p::before {
+  position: absolute;
+  /*   box-sizing: border-box; */
+  content: "Suscribete";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+.containerText button:hover::after {
+  width: 100%;
+}
+.containerText button:hover p::before {
+  width: 100%;
+}
+.containerText button:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+.containerText button svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
+.adoptedDogs {
+  display: grid;
+  justify-items: center;
+  margin-top: 30px;
+}
+.adoptedDogs h2 {
+  background-color: #000;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  width: 35vw;
+  position: relative;
+  top: 20px;
+  color: #fff;
+}
+#containerDogs {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: 100%;
+  justify-items: center;
+  margin-top: 40px;
+}
+#containerDogs article {
+  display: grid;
+  margin-top: 20px;
+  width: 90%;
+  justify-items: center;
+}
+#containerDogs article img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+#containerDogs article button {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  position: relative;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+  top: -10px;
+}
+
+span {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.3em 0.9em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+#containerDogs article button:hover span {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
+}
+
+#containerDogs article button:active span {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
+}
