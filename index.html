@@ -51,7 +51,7 @@
         <h2>Perritos en adopción</h2>
         <div id="divContainer"></div>
         <button class="box" onclick="loadRandomDogs()">
-          <span>Refrescar</span>
+          <span class="span-btn">Refrescar</span>
         </button>
       </section>
 
@@ -101,9 +101,14 @@
         <div id="containerDogs"></div>
       </section>
 
-      <section id="uploadingDog">
-        <h2>Sube una foto</h2>
+      <section class="uploadingDog">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_1280.jpg"
+          alt="dog-image"
+        />
         <form id="form">
+          <h2>¿Conoces a algun perrito perdido que necesite nuestra ayuda?</h2>
+          <h4>Sube una foto del perrito darlo a conocer</h4>
           <input id="file" type="file" name="file" />
           <button type="button" onclick="uploadDogPhoto()">Cargar foto</button>
         </form>
