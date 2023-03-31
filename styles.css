@@ -393,11 +393,11 @@
   display: grid;
   justify-items: end;
   align-items: center;
-  height: 70vh;
+  height: 80vh;
   object-fit: cover;
 }
 .uploadingDog img {
-  height: 60vh;
+  height: 80vh;
   width: 100%;
   object-fit: cover;
   opacity: 0.7;
@@ -414,7 +414,7 @@
     rgba(253, 252, 255, 0.85)
   );
   border-radius: 10px;
-  height: 40vh;
+  height: 55vh;
   width: 30vw;
   position: absolute;
 
@@ -423,6 +423,7 @@
   gap: 15px;
 }
 .uploadingDog form h2 {
+  margin-top: 30px;
   font-size: 25px;
   font-weight: 900;
 }
@@ -432,12 +433,43 @@
   letter-spacing: 1.2px;
   font-weight: 400;
 }
+.inputFile {
+  display: none;
+}
+.inputFile + label {
+  display: flex;
+  margin-top: 20px;
+}
+.inputFile__inputFile-name,
+.inputFile__inputFile-button {
+  font-size: 12px;
+  padding: 10px 12px;
+}
+.inputFile__inputFile-name {
+  background: #6b6767;
+  border: 1px solid #cacaca;
+}
+.inputFile__inputFile-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #fff;
+}
+.inputFile__inputFile-button:hover {
+  background-color: #d47023;
+  font-weight: bold;
+}
+.inputFile__inputFile-button svg {
+  width: 20px;
+}
 
 .uploadingDog button {
-  margin: 10px 0;
+  margin-top: 50px;
   width: 6.5em;
   height: 2.3em;
-  margin: 0.5em;
+
   background: black;
   color: white;
   border: none;
