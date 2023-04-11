@@ -72,8 +72,8 @@
 .container-text p {
   color: #000;
   font-weight: 500;
-  width: 60%;
-  text-align: justify;
+  width: 80%;
+  text-align: center;
 }
 .container-text .btn {
   font-family: monospace;
@@ -565,4 +565,27 @@ footer {
 .socialNetworks svg {
   margin-left: 10px;
   margin-bottom: 10px;
+}
+
+@media (max-width: 890px) {
+  .navbar ul {
+    margin-right: 20px;
+  }
+  .container-text p {
+    text-align: justify;
+    width: 90%;
+  }
+  #divContainer {
+    grid-template-columns: 33% 33% 33%;
+  }
+  #containerDogs {
+    grid-template-columns: 33% 33% 33%;
+  }
+  .uploadingDog form {
+    width: 50vw;
+    padding: 8px 6px;
+  }
+  .uploadingDog form h4 {
+    font-size: 16px;
+  }
 }
