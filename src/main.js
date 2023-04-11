@@ -1,9 +1,10 @@
-// Inserto axios en el proyecto solamente para una funcion(saveFavoriteDog)
-// const api = axios.create({
-//   baseURL: "https://api.thedogapi.com/v1/",
-// });
-// api.defaults.headers.common["X-API-KEY"] =
-//   "live_GFa3HlPNBLTz3Eww5PoLRNmP7C7vpWwKSnAdQaQCGaZZfYsSqkp1keGp9eSsuRIU";
+// Inserto axios en el proyecto solamente para la funcion(saveFavoriteDog)
+
+const api = axios.create({
+  baseURL: "https://api.thedogapi.com/v1/",
+});
+api.defaults.headers.common["X-API-KEY"] =
+  "live_GFa3HlPNBLTz3Eww5PoLRNmP7C7vpWwKSnAdQaQCGaZZfYsSqkp1keGp9eSsuRIU";
 const API_URL = "https://api.thedogapi.com/v1/";
 const RANDOM = "images/search";
 const LIMIT = "?limit=12";
@@ -25,14 +26,6 @@ async function loadRandomDogs() {
   if (response.status !== 200) {
     spanError.innerText = `Hubo un error: ${response.status}`;
   } else {
-    // const img1 = document.getElementById("img1");
-    // const img2 = document.getElementById("img2");
-    // const btn1 = document.getElementById("btn1");
-    // const btn2 = document.getElementById("btn2");
-
-    // img1.src = data[0].url;
-    // img2.src = data[1].url;
-
     // btn1.onclick = () => saveFavoriteDog(data[0].id);
     // btn2.onclick = () => saveFavoriteDog(data[1].id);
 
@@ -102,7 +95,7 @@ async function loadFavoriteDogs() {
 
 // funcion para guardar un gato en favoritos con el metodo 'POST'
 async function saveFavoriteDog(id) {
-  const response = await fetch(`${API_URL}favourites`, {
+  /* const response = await fetch(`${API_URL}favourites`, {
     method: "POST",
     headers: {
       "x-api-key": API_KEY,
@@ -114,24 +107,19 @@ async function saveFavoriteDog(id) {
   });
 
   const data = await response.text();
-  // const { data, status } = await api.post("/favourites", {
-  //   image_id: id,
-  // });
+  */
 
-  // console.log("Save");
-
-  // if (status !== 200) {
-  //   spanError.innerHTML = `Hubo un error:   ${status} ${data.message}`;
-  // } else {
-  //   console.log("Perrito añadido a la lista de adoptados");
-  //   loadFavoriteDogs();
-  // }
+  const { data, status } = await api.post("/favourites", {
+    image_id: id,
+  });
 
   console.log("Save");
-  console.log(response);
 
-  if (response.status !== 200) {
-    spanError.innerHTML = `Hubo un error:   ${response.status} ${data.message}`;
+  // console.log("Save");
+  // console.log(response);
+
+  if (status !== 200) {
+    spanError.innerHTML = `Hubo un error:   ${status} ${data.message}`;
   } else {
     console.log("Perrito añadido a la lista de adoptados");
     loadFavoriteDogs();
