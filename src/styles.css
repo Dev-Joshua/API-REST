@@ -568,12 +568,18 @@ footer {
 }
 
 @media (max-width: 890px) {
+  .navbar img {
+    margin-left: 20px;
+  }
   .navbar ul {
     margin-right: 20px;
   }
   .container-text p {
     text-align: justify;
     width: 90%;
+  }
+  .container-text .btn {
+    padding: 6px 15px;
   }
   #divContainer {
     grid-template-columns: 33% 33% 33%;
@@ -587,5 +593,74 @@ footer {
   }
   .uploadingDog form h4 {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 690px) {
+  .container-text {
+    position: absolute;
+    top: 55%;
+    width: 65%;
+    right: 14%;
+    text-align: center;
+  }
+  .container-text h1 {
+    width: 100%;
+  }
+  .container-text p {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .container-text .btn {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  #divContainer {
+    grid-template-columns: 50% 50%;
+  }
+  #containerDogs {
+    grid-template-columns: 50% 50%;
+  }
+  .uploadingDog form {
+    height: 45vh;
+  }
+  .uploadingDog form h2 {
+    font-size: 20px;
+  }
+  .uploadingDog form h4 {
+    font-size: 14px;
+  }
+  .inputFile__inputFile-name,
+  .inputFile__inputFile-button {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+  .inputFile + label {
+    display: flex;
+    margin-top: 0;
+  }
+  .uploadingDog button {
+    margin-top: 20px;
+  }
+  .firstContainer h3 {
+    letter-spacing: 0.5px;
+    font-size: 20px;
+  }
+  .firstContainer li {
+    font-size: 12px;
+  }
+  .secondContainer ul {
+    font-size: 18px;
+  }
+  .secondContainer ul li {
+    font-size: 12px;
+  }
+  .socialNetworks a {
+    font-size: 12px;
+  }
+  .banner-md {
+    display: none;
   }
 }
