@@ -617,8 +617,14 @@ footer {
     margin: 10px 0;
     font-size: 1rem;
   }
+  #dogsForAdoption h2 {
+    font-size: 30px;
+  }
   #divContainer {
     grid-template-columns: 50% 50%;
+  }
+  .adoptedDogs h2 {
+    font-size: 30px;
   }
   #containerDogs {
     grid-template-columns: 50% 50%;
@@ -662,5 +668,54 @@ footer {
   }
   .banner-md {
     display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .navbar ul li {
+    font-size: 14px;
+  }
+  #banner {
+    display: none;
+  }
+  #dogsForAdoption h2 {
+    font-size: 25px;
+    width: 45vw;
+    margin-top: 30px;
+    letter-spacing: 2px;
+  }
+  #divContainer {
+    grid-template-columns: 100%;
+  }
+  .adoptedDogs h2 {
+    font-size: 25px;
+    width: 45vw;
+    margin-top: 30px;
+    letter-spacing: 2px;
+  }
+  #containerDogs {
+    grid-template-columns: 100%;
+  }
+  .uploadingDog {
+    display: none;
+  }
+  .footer {
+    padding: 10px;
+  }
+  .firstContainer {
+    display: none;
+  }
+  .secondContainer ul {
+    font-size: 14px;
+  }
+  .secondContainer ul li {
+    list-style: circle;
+    font-size: 12px;
+  }
+  .socialNetworks a {
+    font-size: 12px;
+  }
+  .socialNetworks svg {
+    width: 20px;
   }
 }
