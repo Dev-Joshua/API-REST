@@ -2,7 +2,7 @@
 
 ### Consumo de API REST
 
-En este proyecto trabaje aprendí sobre el flujo de comunicación entre Frontend y el Back, trabaje consumiendo la API de https://thedogapi.com/ con Javascript.
+En este proyecto trabaje sobre el flujo de comunicación entre Frontend y el Back, trabaje consumiendo la API de https://thedogapi.com/ con Javascript.
 
 Esta aplicacion web tiene las operaciones basicas de un CRUD, su tematica esta enfocada a la adopcion de perritos.
 
